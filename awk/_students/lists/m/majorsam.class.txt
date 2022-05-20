@@ -1,0 +1,5 @@
+USERNAME=majorsam
+EMAIL=majorsam@fit.cvut.cz
+REALNAME=Samuel_Majoroš
+GRADE=1
+GROUP=22

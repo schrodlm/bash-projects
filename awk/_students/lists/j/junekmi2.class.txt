@@ -1,0 +1,5 @@
+USERNAME=junekmi2
+EMAIL=junekmi2@fit.cvut.cz
+REALNAME=Michal_Junek
+GRADE=1
+GROUP=16

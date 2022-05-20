@@ -1,0 +1,5 @@
+USERNAME=alferdom
+EMAIL=alferdom@fit.cvut.cz
+REALNAME=Dominik_Alfery
+GRADE=1
+GROUP=2

@@ -1,0 +1,5 @@
+USERNAME=kubervac
+EMAIL=kubervac@fit.cvut.cz
+REALNAME=Václav_Kubernát
+GRADE=4
+GROUP=3

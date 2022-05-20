@@ -1,0 +1,100 @@
+#!/bin/bash
+
+page=2;
+site="https://addons.mozilla.org/cs/firefox/search/?sort=rating&type=statictheme";
+
+
+
+
+#=======================INPUT CHECKING============================
+usage() {                                 # Function: Print a help message.
+  echo "Usage: $0 [ -n NUM OF PAGES ] [ -h HELP ]" 1>&2 
+}
+
+exit_abnormal() {                         # Function: Exit with error.
+  usage
+  exit 1
+}
+
+#no arguments were given
+if [[ $1 == "" ]]; then
+    exit_abnormal
+fi
+
+#check options
+while getopts ":n:h" options; do
+	
+	case "${options}" in
+    n)                                    # If the option is t,
+      PAGES=${OPTARG}                     # Set $TIMES to specified value.
+      re_isanum='^[0-9]+$'                # Regex: match whole numbers only
+      if ! [[ $PAGES =~ $re_isanum ]] ; then   # if $TIMES not whole:
+        echo "Error: TIMES must be a positive, whole number."
+        exit_abnormal
+        exit 1
+        
+      elif [ $PAGES -eq "0" ]; then       # If it's zero:
+        echo "Error: PAGES must be greater than zero."
+        exit_abnormal                     # Exit abnormally.
+      fi
+      ;;
+     
+    h)
+      echo "Script download all mozilla personas from their site. You have to specify how many pages you want downloaded. Images that have been already downloaded will not be downloaded again."
+      exit 0
+      ;;
+        
+    
+    :)                                    # If expected argument omitted:
+      echo "Error: -${OPTARG} requires an argument."
+      exit_abnormal                       # Exit abnormally.
+      ;;
+      
+    *)                                    # If unknown (any other) option:
+      exit_abnormal                       # Exit abnormally.
+      ;;
+  esac
+done
+#===============================================================
+	
+	
+#========================SCRIPT START===========================
+#downloading images from mozilla site - $1 = argument is how many pages to download from
+for (( i = 0; i < $PAGES; i++))
+do
+	#check if site exists
+	#===========================================================
+	status=$(curl -s --head -w %{http_code} $site -o /dev/null)
+	
+	if (( $status != 200 )) 
+	then
+		echo "Site doesnt exist" 2>&1;
+		exit 1;
+	fi
+	#===========================================================
+	
+	#downloading the images - picked out from the page with sed
+	#===========================================================
+	images=($(curl "$site" | grep -o '<img[^>]*>'| grep -o 'src="[^"]*"' | tr -d "\""| sed s/src=//g));
+
+
+	for image in ${images[@]}
+	do
+		# -nc prevents duplicates -sends it straight to 
+		wget -nc -q --directory-prefix=images $image
+		#eog images/$image
+	done;
+	#===========================================================
+	
+	
+	
+	#setting up the next mozilla page
+	#===========================================================
+	site="https://addons.mozilla.org/cs/firefox/search/?sort=rating&type=statictheme&page=$page"
+	#adding a page - so I can download it later
+	echo $site;
+	((page++))
+	
+
+done;
+

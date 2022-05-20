@@ -1,0 +1,5 @@
+USERNAME=murinmat
+EMAIL=murinmat@fit.cvut.cz
+REALNAME=Matej_Murín
+GRADE=1
+GROUP=31

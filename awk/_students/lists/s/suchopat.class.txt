@@ -1,0 +1,5 @@
+USERNAME=suchopat
+EMAIL=suchopat@fit.cvut.cz
+REALNAME=Patrik_Suchopa
+GRADE=1
+GROUP=9

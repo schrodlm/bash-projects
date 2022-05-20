@@ -1,0 +1,5 @@
+USERNAME=kolvejoz
+EMAIL=kolvejoz@fit.cvut.cz
+REALNAME=Jozef_Kol'vek
+GRADE=1
+GROUP=30

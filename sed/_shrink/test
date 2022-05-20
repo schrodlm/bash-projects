@@ -1,0 +1,5 @@
+#!/bin/bash
+
+h=$(tput cols)
+
+echo $h;

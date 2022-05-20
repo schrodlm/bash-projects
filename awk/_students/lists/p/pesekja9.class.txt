@@ -1,0 +1,5 @@
+USERNAME=pesekja9
+EMAIL=pesekja9@fit.cvut.cz
+REALNAME=Jan_Pešek
+GRADE=3
+GROUP=9

@@ -1,0 +1,5 @@
+USERNAME=kotvaada
+EMAIL=kotvaada@fit.cvut.cz
+REALNAME=Adam_Kotvas
+GRADE=1
+GROUP=18

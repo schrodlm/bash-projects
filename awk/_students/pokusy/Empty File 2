@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cat tabulka.html | tr "<>" "\n" |  awk '
+{
+	if($0 ~ /[[:upper:]].+ [[:upper:]][[:lower:]]+/)
+	{
+	 a[$0]++ 
+	}
+
+}
+END{
+	
+        PROCINFO["sorted_in"]="@val_num_desc"
+	
+        for( i in a ) {
+	
+          print a[i] " " i
+	
+          if (++c == 10) exit
+	
+        }
+	
+ }'

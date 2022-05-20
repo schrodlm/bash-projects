@@ -1,0 +1,5 @@
+USERNAME=tocikdav
+EMAIL=tocikdav@fit.cvut.cz
+REALNAME=David_Točík
+GRADE=2
+GROUP=27

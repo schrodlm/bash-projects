@@ -1,0 +1,5 @@
+USERNAME=putikmat
+EMAIL=putikmat@fit.cvut.cz
+REALNAME=Matěj_Putík
+GRADE=1
+GROUP=11

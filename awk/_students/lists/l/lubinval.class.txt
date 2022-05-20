@@ -1,0 +1,5 @@
+USERNAME=lubinval
+EMAIL=lubinval@fit.cvut.cz
+REALNAME=Valiantsin_Lubinski
+GRADE=1
+GROUP=22

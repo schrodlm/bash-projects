@@ -1,0 +1,5 @@
+USERNAME=patzatom
+EMAIL=patzatom@fit.cvut.cz
+REALNAME=Tomáš_Patzák
+GRADE=1
+GROUP=1

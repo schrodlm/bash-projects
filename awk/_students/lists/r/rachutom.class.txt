@@ -1,0 +1,5 @@
+USERNAME=rachutom
+EMAIL=rachutom@fit.cvut.cz
+REALNAME=Tomáš_Rachůnek
+GRADE=1
+GROUP=15

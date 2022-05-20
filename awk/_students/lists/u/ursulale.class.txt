@@ -1,0 +1,5 @@
+USERNAME=ursulale
+EMAIL=ursulale@fit.cvut.cz
+REALNAME=Alexandr_Ursul
+GRADE=1
+GROUP=10

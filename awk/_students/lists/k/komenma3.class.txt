@@ -1,0 +1,5 @@
+USERNAME=komenma3
+EMAIL=komenma3@fit.cvut.cz
+REALNAME=Martin_Komenda
+GRADE=1
+GROUP=11

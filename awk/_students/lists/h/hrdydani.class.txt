@@ -1,0 +1,5 @@
+USERNAME=hrdydani
+EMAIL=hrdydani@fit.cvut.cz
+REALNAME=Daniel_Hrdý
+GRADE=1
+GROUP=18

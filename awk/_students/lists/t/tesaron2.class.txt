@@ -1,0 +1,5 @@
+USERNAME=tesaron2
+EMAIL=tesaron2@fit.cvut.cz
+REALNAME=Ondřej_Tesař
+GRADE=1
+GROUP=1

@@ -1,0 +1,5 @@
+USERNAME=hartseba
+EMAIL=hartseba@fit.cvut.cz
+REALNAME=Sebastián_Hart
+GRADE=1
+GROUP=11

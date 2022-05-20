@@ -1,0 +1,5 @@
+USERNAME=prendvoj
+EMAIL=prendvoj@fit.cvut.cz
+REALNAME=Vojtěch_Prendký
+GRADE=1
+GROUP=21

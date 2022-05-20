@@ -1,0 +1,5 @@
+USERNAME=sekanma2
+EMAIL=sekanma2@fit.cvut.cz
+REALNAME=Maxim_Sekanov
+GRADE=1
+GROUP=26

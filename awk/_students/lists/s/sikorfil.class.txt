@@ -1,0 +1,5 @@
+USERNAME=sikorfil
+EMAIL=sikorfil@fit.cvut.cz
+REALNAME=Filip_Sikora
+GRADE=1
+GROUP=13

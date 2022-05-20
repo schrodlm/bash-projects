@@ -1,0 +1,5 @@
+USERNAME=vlasami6
+EMAIL=vlasami6@fit.cvut.cz
+REALNAME=Michal_Vlasák
+GRADE=1
+GROUP=13

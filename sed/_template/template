@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#Ziskám prvně kody originálních předmětů ze sed skriptu
+predmety=($(./courses-map courses.txt | cut -d":" -f1 | tr "\n" " "));
+
+#POtřebuji to same, akorát v trochu jiné podobě (bez "-")
+predmety2=($(./courses-map courses.txt | cut -d":" -f1 | tr "\n" " " | tr -d "-"));
+
+
+#Ziskám prvně kody skutečných předmětů ze sed skriptu
+array_code=($(./courses-map courses.txt | cut -d":" -f2 | tr "\n" " "));
+
+echo "Sedding keywords"
+
+i=0;
+for d in ${predmety[@]};
+do
+	cat data_template.txt | sed --quiet -E -e s/[A-Z]{2}-[A-Z]{2}[0-9]/$d/g -e s/[A-Z]{4}[0-9]/${predmety2[i]}/g 
+	((i++));
+done; 
+
+mkdir -p config_soubory;
+cd config_soubory;
+
+echo "Creating files";
+echo "Modifying files";
+
+j=0;
+
+for predmet in ${predmety[@]};
+do
+(
+	mkdir -p $predmet;
+	cd $predmet;
+	cp ../../local.php ../../local.protected.course.php .;
+	sed -i -e s/COURSE-CODE/$predmet/g -e s/COURSECODE/${predmety2[j]}/g local.protected.course.php;
+	sed -i -e s/COURSE-CODE/$predmet/g -e s/COURSECODE/${predmety2[j]}/g local.php
+)
+	((j++))
+done;
+
+echo "Success"	
+

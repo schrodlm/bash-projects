@@ -1,0 +1,11 @@
+# Kód předmětu včetně pomlčky
+COURSE-CODE:
+   BI-PS2
+
+# Kód předmětu bez pomlčky
+COURSECODE:
+   BIPS2
+
+# Název předmětu
+COURSE-NAME:
+   Skriptovací jazyky

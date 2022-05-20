@@ -1,0 +1,46 @@
+#!/bin/bash
+
+students=$(cat tabulka.html | grep '^<html><head><meta http-equiv="Content-Type".*FIT ČVUT v Praze</a></div></div></div></body></html>$' | tr "<>" "\n" |  awk '
+{	
+	if($0 ~ /^[[:digit:]]+\/[[:digit:]]+$/)
+	{
+	b[$0]++
+	}
+	if($0 ~ /^[[:upper:]][^ ]* [[:upper:]][[:lower:]]+$/)
+	{
+	 a[$0]++ 
+	}
+
+}
+END{
+		#nastavim zmenim pozici jmena a prijmeni u kazdeho prvku pole
+        for( i in a ) {
+			k = gensub(/([^ ]+) (.*)/,"\\2_\\1", "g", i);
+			d[k]++
+        }
+        #nastavim sort podle jmena a printnu
+        PROCINFO["sorted_in"]="@ind_str_asc"
+        for (i in d){
+        print i
+        }     
+        for(i in b)
+        {
+        	print i;
+        }   
+	
+ }')
+
+# bash funkce na ukladani do bash array -> defaultní delimeter je "\n"
+ readarray -t <<<$students
+
+
+for i in {a..z}; do touch lists/$i.list; done
+
+echo 
+for i in ${MAPFILE[@]}; do
+
+printf "%s\n" $i;
+
+done
+
+#${#MAPFILE[@]}
